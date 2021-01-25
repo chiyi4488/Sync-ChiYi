@@ -5,7 +5,7 @@ on:
         - cron: '0 0/6 * * *'
 jobs:
     move:
-        name: Google Drive to Google Drive Sync
+        name: Google Drive to Google Drive Sync (Disable)
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -19,5 +19,6 @@ jobs:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
+              # ! 本同步已停用 !
               # Start Mission 
-              bash gdcopy.sh
+              # bash gdcopy.sh
