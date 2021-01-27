@@ -25,7 +25,6 @@ jobs:
           env:
               DRIVE_SOURCE:   ${{ secrets.DRIVE3 }}
               DRIVE_TARGET:   ${{ secrets.DRIVE4 }}
-jobs:
     move:
         name: 同步操作 (GD)
         runs-on: ubuntu-latest
