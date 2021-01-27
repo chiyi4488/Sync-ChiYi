@@ -12,17 +12,17 @@ name: onedrive            For OneDrive      (名稱，需與 copy.sh 配搭)
 name: gdrive_mirror       For Google Drive  (名稱，需與 copy.sh 配搭)
 ```
 
-(You can change them in `copy.sh`)
 
 ```
 gpg --symmetric --cipher-algo AES256 rclone.conf 
 ```
 
-(輸入想設定的金鑰)
+輸入此指令後，將會有視窗提示你輸入金鑰，請輸入一個是你可以記得的。
 
-It'll ask you for a passphrase, pick one you can remember.
-Upload the generated rclone.conf.gpg to this repository's root directory(there is one already, that's mine. You should delete it.).
-Go to `Settings` and click `Secrets`, create a repository secret called `GPG_PASSPHRASE`, paste your passphrase into it, click save.
-Then edit this document, add sth. or delete sth. Then click save(This'll start the workflow).
+3. 上傳 gpg 指令所生成的 rclone.conf.gpg 檔案至 repository 的主目錄 (root)(在主目錄中應該已經有了，但那是我的，你應該替換它)
 
-**That's it, it'll run per 6 hrs.**
+4. 前往 **Settings**，然後點 **Secrets**，建立一個secret，名叫 `GPG_PASSPHRASE`，然後輸入你設定的金鑰，並儲存。
+
+5. 最後編輯此文件，新增無用的換行，或刪除無用的換行，然後儲存。(觸發) workflow
+
+**完成了，它將會每 6 小時執行一次。**
