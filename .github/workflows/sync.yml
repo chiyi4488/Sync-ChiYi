@@ -1,0 +1,27 @@
+name: 同步作業 (OD)
+on:
+    push:
+    schedule:
+        - cron: '0 0/6 * * *'
+jobs:
+    move:
+        name: 同步操作 (OD)
+        runs-on: ubuntu-latest
+        steps:
+        - name: 檢查
+          uses: actions/checkout@master
+        - name: 下載並安裝 rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: 解碼 config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+              DRIVE_SOURCE:   ${{ secrets.DRIVE1 }}
+              DRIVE_TARGET:   ${{ secrets.DRIVE2 }}
+        - name: 開始操作
+          run: |
+              bash copy.sh
+          env:
+              DRIVE_SOURCE:   ${{ secrets.DRIVE3 }}
+              DRIVE_TARGET:   ${{ secrets.DRIVE4 }}
