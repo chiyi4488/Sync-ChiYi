@@ -17,8 +17,6 @@ jobs:
               bash decrypt.sh
           env:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-              DRIVE_SOURCE:   ${{ secrets.DRIVE1 }}
-              DRIVE_TARGET:   ${{ secrets.DRIVE2 }}
         - name: 開始操作
           run: |
               bash copy.sh
@@ -38,8 +36,6 @@ jobs:
               bash decrypt.sh
           env:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-              DRIVE_SOURCE:   ${{ secrets.DRIVE3 }}
-              DRIVE_TARGET:   ${{ secrets.DRIVE4 }}
         - name: 開始操作
           run: |
               bash gdcopy.sh
