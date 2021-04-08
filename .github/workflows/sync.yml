@@ -21,8 +21,8 @@ jobs:
           run: |
               bash copy.sh
           env:
-              DRIVE_SOURCE:   ${{ secrets.DRIVE3 }}
-              DRIVE_TARGET:   ${{ secrets.DRIVE4 }}
+              DRIVE_SOURCE:   ${{ secrets.DRIVE4 }}
+              DRIVE_TARGET:   ${{ secrets.DRIVE3 }}
     go_move:
         name: 同步操作 (GD)
         runs-on: ubuntu-latest
@@ -40,5 +40,5 @@ jobs:
           run: |
               bash gdcopy.sh
           env:
-              DRIVE_SOURCE:   ${{ secrets.DRIVE3 }}
-              DRIVE_TARGET:   ${{ secrets.DRIVE4 }}
+              DRIVE_SOURCE:   ${{ secrets.DRIVE4 }}
+              DRIVE_TARGET:   ${{ secrets.DRIVE3 }}
