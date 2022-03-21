@@ -8,8 +8,8 @@ rclone config --config=./rclone.conf
 ```
 
 ```
-name: onedrive            For OneDrive      (名稱，需與 copy.sh 配搭)
-name: gdrive_mirror       For Google Drive  (名稱，需與 copy.sh 配搭)
+name: onedrive              For OneDrive      (名稱，需與 copy.sh 配搭)
+name: google_drive          For Google Drive  (名稱，需與 copy.sh 配搭)
 ```
 
 
